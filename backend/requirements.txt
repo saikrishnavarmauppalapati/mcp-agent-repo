@@ -1,4 +1,5 @@
 fastapi
-uvicorn[standard]
+uvicorn
 httpx
-pydantic
+google-api-python-client
+python-dotenv
