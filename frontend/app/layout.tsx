@@ -1,8 +1,21 @@
-"use client";
-
-import { SessionProvider } from "next-auth/react";
+import "./globals.css";
 import { ReactNode } from "react";
+import { SessionProvider } from "next-auth/react";
 
-export function Providers({ children, session }: { children: ReactNode, session: any }) {
-  return <SessionProvider session={session}>{children}</SessionProvider>;
+export const metadata = {
+  title: "MCP YouTube Agent",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>
+        <SessionProvider>{children}</SessionProvider>
+      </body>
+    </html>
+  );
 }
