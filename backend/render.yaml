@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: mcp-backend
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    repo: "https://github.com/saikrishnavarmauppalapati/mcp-agent-repo"
