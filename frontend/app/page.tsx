@@ -21,7 +21,7 @@ export default function Home() {
 
   if (!session) {
     return (
-      <div>
+      <div style={{ padding: 40 }}>
         <h1>Login with Google to use MCP Agent</h1>
         <button onClick={() => signIn("google")}>Login</button>
       </div>
@@ -29,25 +29,27 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <div style={{ padding: 20 }}>
       <h1>Welcome, {session.user?.name}</h1>
       <button onClick={() => signOut()}>Logout</button>
 
-      <div>
+      <div style={{ marginTop: 20 }}>
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search YouTube"
+          style={{ marginRight: 10 }}
         />
         <button onClick={search}>Search</button>
       </div>
 
-      <div>
+      <div style={{ marginTop: 20 }}>
         {results.map((video: any) => (
-          <div key={video.id}>
+          <div key={video.id} style={{ marginBottom: 15, border: "1px solid #ccc", padding: 10 }}>
             <h3>{video.title}</h3>
             <p>{video.description}</p>
+            <small>Channel: {video.channel}</small>
           </div>
         ))}
       </div>
